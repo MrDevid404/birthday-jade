@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import memory1 from "@/assets/memory-1.jpg";
+import memory1 from "@/assets/WhatsApp Image 2025-12-15 at 23.38.24_0dd04369.jpg";
 import memory2 from "@/assets/Smiling Man Talking on Cell Phone Stock Photo - Image of handsome, cheer_ 36971928.jpg";
 import memory4 from "@/assets/Robin and Steve XD.jpg";
-import memory3 from "@/assets/Robin and Steve XD.jpg";
+import memory3 from "@/assets/WhatsApp Image 2025-12-15 at 23.38.24_bd08965f.jpg";
 
 interface SlideshowProps {
   onComplete: () => void;
