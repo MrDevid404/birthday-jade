@@ -92,7 +92,7 @@ const Slideshow = ({ onComplete }: SlideshowProps) => {
   const slide = slides[currentSlide];
 
   return (
-    <div className="fixed inset-0 bg-gradient-hero overflow-auto p-4 md:p-8">
+    <div className="fixed inset-0 bg-gradient-hero p-4 md:p-8">
   <div className="flex justify-center items-start md:items-center min-h-screen">
     <div 
       className={`max-w-3xl w-full transition-all duration-400 ${
