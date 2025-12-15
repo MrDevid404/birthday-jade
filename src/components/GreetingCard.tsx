@@ -21,7 +21,7 @@ const GreetingCard = ({ onCelebrate }: GreetingCardProps) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-gradient-hero flex items-center justify-center p-4 overflow-auto">
+    <div className="fixed inset-0 bg-gradient-hero flex items-center justify-center p-4">
       {showConfetti && <Confetti />}
       
       <div className="max-w-xl w-full py-8">
