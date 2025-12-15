@@ -1,13 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import StartScreen from "@/components/StartScreen";
+import Slideshow from "@/components/Slideshow";
+import GreetingCard from "@/components/GreetingCard";
+import { useAudio } from "@/hooks/useAudio";
+
+type Stage = "start" | "slideshow" | "card";
 
 const Index = () => {
+  const [stage, setStage] = useState<Stage>("start");
+  const { isMusicPlaying, toggleMusic, playCelebrationSound } = useAudio();
+
+  const handleStart = () => {
+    setStage("slideshow");
+  };
+
+  const handleSlideshowComplete = () => {
+    setStage("card");
+  };
+
+  const handleCelebrate = () => {
+    playCelebrationSound();
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-background">
+      {stage === "start" && (
+        <StartScreen
+          onStart={handleStart}
+          onToggleMusic={toggleMusic}
+          isMusicPlaying={isMusicPlaying}
+        />
+      )}
+      
+      {stage === "slideshow" && (
+        <Slideshow onComplete={handleSlideshowComplete} />
+      )}
+      
+      {stage === "card" && (
+        <GreetingCard onCelebrate={handleCelebrate} />
+      )}
+    </main>
   );
 };
 
