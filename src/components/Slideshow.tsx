@@ -128,7 +128,6 @@ const Slideshow = ({ onComplete }: SlideshowProps) => {
                     <span className="font-body text-sm">{reason}</span>
                   </div>
                 ))}
-                <p className="text-muted-foreground text-xs mt-3">...and 9 more!</p>
               </div>
             ) : (
               <p className="text-foreground/75 font-body leading-relaxed">{slide.text}</p>
