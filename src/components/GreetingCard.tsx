@@ -80,7 +80,7 @@ const GreetingCard = ({ onCelebrate }: GreetingCardProps) => {
                     Made this for you:
                   </p>
                   <a
-                    href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
+                    href="https://open.spotify.com/playlist/5im3NmcAOmci8DLfMkitV3?si=08e3b5e52bc24c11"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 btn-celebration text-sm"
