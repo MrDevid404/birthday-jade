@@ -20,12 +20,11 @@ const StartScreen = ({ onStart, onToggleMusic, isMusicPlaying }: StartScreenProp
         backgroundPosition: 'center',
       }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-rose-soft/30 via-transparent to-peach/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-cream/20 via-transparent to-gold-light/30" />
       
-      {/* Floating decorations */}
+      {/* Floating decorations - toned down */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <div
             key={i}
             className="absolute animate-float"
@@ -33,55 +32,50 @@ const StartScreen = ({ onStart, onToggleMusic, isMusicPlaying }: StartScreenProp
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 2}s`,
+              animationDuration: `${4 + Math.random() * 2}s`,
             }}
           >
-            <span className="text-2xl opacity-60">
-              {['✨', '💖', '🌸', '⭐', '💫'][Math.floor(Math.random() * 5)]}
+            <span className="text-xl opacity-50">
+              {['✨', '⭐', '🎈'][Math.floor(Math.random() * 3)]}
             </span>
           </div>
         ))}
       </div>
 
-      {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-lg">
-        <div className="animate-bounce-slow mb-6">
-          <span className="text-6xl">🎀</span>
+        <div className="animate-float mb-4">
+          <span className="text-5xl">🎉</span>
         </div>
         
-        <h1 className="font-display text-5xl md:text-7xl text-gradient mb-4 animate-fade-in-up">
-          A Special Day
+        <h1 className="font-display text-5xl md:text-6xl text-gradient mb-3 animate-fade-in-up">
+          Hey You!
         </h1>
         
-        <p className="text-foreground/80 text-lg md:text-xl mb-8 font-body animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          For someone who makes every day brighter ✨
+        <p className="text-foreground/70 text-lg mb-8 font-body animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          Something special is waiting...
         </p>
 
-        <div className="flex flex-col items-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="flex flex-col items-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           <button
             onClick={onStart}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="btn-celebration group flex items-center gap-3 text-lg"
+            className="btn-celebration group flex items-center gap-3"
           >
             <Play 
-              className={`w-6 h-6 transition-transform duration-300 ${isHovered ? 'scale-110' : ''}`}
+              className={`w-5 h-5 transition-transform duration-300 ${isHovered ? 'scale-110' : ''}`}
               fill="currentColor"
             />
-            Begin the Magic
+            Let's Go
           </button>
 
           <button
             onClick={onToggleMusic}
-            className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors duration-300 mt-4"
+            className="flex items-center gap-2 text-foreground/60 hover:text-primary transition-colors duration-300 mt-2"
           >
-            {isMusicPlaying ? (
-              <Volume2 className="w-5 h-5" />
-            ) : (
-              <Music className="w-5 h-5" />
-            )}
+            {isMusicPlaying ? <Volume2 className="w-5 h-5" /> : <Music className="w-5 h-5" />}
             <span className="text-sm font-medium">
-              {isMusicPlaying ? 'Music On' : 'Turn on Music'}
+              {isMusicPlaying ? 'Music On' : 'Play Music'}
             </span>
           </button>
         </div>
