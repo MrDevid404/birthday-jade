@@ -28,7 +28,7 @@ const slides = [
   image: memory3,
   title: "My Robin to my Steve",
   text: "Couldn’t ask for a better partner in crime. From silly adventures to random chaos, you’ve always got my back!",
-  }
+  },
   {
     image: null,
     title: "17 Things I Know About You",
