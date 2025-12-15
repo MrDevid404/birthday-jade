@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Gift, Heart } from "lucide-react";
-import cardBg from "@/assets/card-bg.jpg";
+import { ExternalLink, Gift } from "lucide-react";
 import BirthdayCake from "./BirthdayCake";
 import Confetti from "./Confetti";
 
@@ -21,112 +20,67 @@ const GreetingCard = ({ onCelebrate }: GreetingCardProps) => {
     }
   };
 
-  const handleBlowCandle = () => {
-    setCandleBlown(true);
-  };
-
   return (
     <div className="fixed inset-0 bg-gradient-hero flex items-center justify-center p-4 overflow-auto">
       {showConfetti && <Confetti />}
       
-      <div className="max-w-2xl w-full py-8">
+      <div className="max-w-xl w-full py-8">
         {!isOpen ? (
-          // Closed card
-          <div 
-            className="relative cursor-pointer group"
-            onClick={handleOpenCard}
-          >
-            <div 
-              className="rounded-3xl overflow-hidden shadow-card transition-all duration-500 group-hover:shadow-glow group-hover:scale-[1.02]"
-              style={{
-                backgroundImage: `url(${cardBg})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              <div className="min-h-[400px] flex flex-col items-center justify-center p-8 bg-gradient-to-b from-transparent via-card/30 to-card/60">
-                <div className="animate-bounce-slow mb-6">
-                  <Gift className="w-16 h-16 text-primary" />
-                </div>
-                <h2 className="font-display text-4xl md:text-5xl text-gradient mb-4 text-center">
-                  A Special Message
-                </h2>
-                <p className="text-foreground/70 text-lg font-body mb-6">
-                  Click to open your birthday card! 💝
-                </p>
-                <div className="flex items-center gap-2 text-primary animate-pulse-soft">
-                  <Heart className="w-5 h-5" fill="currentColor" />
-                  <span className="font-medium">Tap to reveal</span>
-                  <Heart className="w-5 h-5" fill="currentColor" />
-                </div>
+          <div className="relative cursor-pointer group" onClick={handleOpenCard}>
+            <div className="card-birthday transition-all duration-300 group-hover:shadow-glow group-hover:scale-[1.02] text-center py-12">
+              <div className="animate-float mb-4">
+                <Gift className="w-12 h-12 text-primary mx-auto" />
               </div>
+              <h2 className="font-display text-3xl md:text-4xl text-gradient mb-3">Your Birthday Card</h2>
+              <p className="text-foreground/60 font-body">Tap to open</p>
             </div>
           </div>
         ) : (
-          // Open card
-          <div className="space-y-8 animate-scale-in">
-            {/* Card content */}
+          <div className="space-y-6 animate-scale-in">
             <div className="card-birthday text-center">
-              <div className="mb-6">
-                <span className="text-6xl">🎂</span>
-              </div>
+              <span className="text-4xl mb-4 block">🎂</span>
               
-              <h1 className="font-display text-5xl md:text-6xl text-gradient mb-6">
-                Happy 17th Birthday!
-              </h1>
+              <h1 className="font-display text-4xl md:text-5xl text-gradient mb-4">Happy 17th!</h1>
               
-              <div className="max-w-lg mx-auto space-y-4 text-foreground/80 font-body text-lg leading-relaxed">
+              <div className="max-w-md mx-auto space-y-3 text-foreground/75 font-body leading-relaxed">
+                <p>Yo,</p>
                 <p>
-                  To my amazing best friend,
+                  17 is a big deal. You're growing into someone incredible and I'm glad I get to witness it.
                 </p>
                 <p>
-                  Seventeen is such a special age – you're becoming the incredible person you were always meant to be. Watching you grow has been one of the greatest joys of my life.
+                  Through everything, you've always kept it real. That's rare and I appreciate you for it.
                 </p>
                 <p>
-                  You bring so much light and laughter into this world. Your kindness, your strength, and your beautiful heart inspire everyone around you.
+                  Here's to another year of wins, growth, and good times. You deserve all of it.
                 </p>
-                <p>
-                  Here's to another year of adventures, late-night talks, inside jokes, and memories we'll treasure forever.
-                </p>
-                <p className="font-display text-2xl text-gradient pt-4">
-                  I love you to the moon and back! 🌙
+                <p className="font-display text-xl text-gradient pt-3">
+                  Happy Birthday!
                 </p>
               </div>
 
-              {/* Special link */}
-              <div className="mt-8 pt-6 border-t border-border">
-                <p className="text-muted-foreground mb-4 font-body">
-                  I made something special just for you:
-                </p>
+              <div className="mt-6 pt-4 border-t border-border">
+                <p className="text-muted-foreground text-sm mb-3 font-body">Made this for you:</p>
                 <a
                   href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 btn-celebration text-base"
+                  className="inline-flex items-center gap-2 btn-celebration text-sm"
                 >
-                  <span>Your Birthday Playlist</span>
+                  <span>Your Playlist</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
-            {/* Birthday Cake Section */}
             <div className="card-birthday">
-              <h2 className="font-display text-3xl text-gradient text-center mb-6">
-                Time to Make a Wish!
-              </h2>
-              <BirthdayCake onBlowCandle={handleBlowCandle} />
+              <h2 className="font-display text-2xl text-gradient text-center mb-4">Blow Out the Candle</h2>
+              <BirthdayCake onBlowCandle={() => setCandleBlown(true)} />
             </div>
 
-            {/* Final message */}
             {candleBlown && (
-              <div className="text-center animate-fade-in-up py-8">
-                <p className="font-display text-3xl text-gradient mb-4">
-                  May all your dreams come true! ✨
-                </p>
-                <p className="text-muted-foreground font-body">
-                  With all my love, forever and always 💕
-                </p>
+              <div className="text-center animate-fade-in-up py-4">
+                <p className="font-display text-2xl text-gradient mb-2">Hope it comes true!</p>
+                <p className="text-muted-foreground text-sm font-body">- Your Best Friend</p>
               </div>
             )}
           </div>

@@ -51,19 +51,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom birthday colors
-        rose: {
-          soft: "hsl(var(--rose-soft))",
-          medium: "hsl(var(--rose-medium))",
-          deep: "hsl(var(--rose-deep))",
+        // Warm celebration colors
+        amber: {
+          DEFAULT: "hsl(var(--amber))",
+          light: "hsl(var(--amber-light))",
         },
         gold: {
           DEFAULT: "hsl(var(--gold))",
           light: "hsl(var(--gold-light))",
         },
         cream: "hsl(var(--cream))",
-        coral: "hsl(var(--coral))",
-        peach: "hsl(var(--peach))",
+        warm: "hsl(var(--warm))",
+        sunset: "hsl(var(--sunset))",
       },
       borderRadius: {
         lg: "var(--radius)",
