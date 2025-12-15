@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import memory1 from "@/assets/memory-1.jpg";
-import memory2 from "@/assets/memory-2.jpg";
-import memory3 from "@/assets/memory-3.jpg";
+import memory2 from "@/assets/Smiling Man Talking on Cell Phone Stock Photo - Image of handsome, cheer_ 36971928.jpg";
+import memory4 from "@/assets/Robin and Steve XD.jpg";
+import memory3 from "@/assets/Robin and Steve XD.jpg";
 
 interface SlideshowProps {
   onComplete: () => void;
@@ -25,8 +26,8 @@ const slides = [
     text: "Today is all about celebrating YOU! Just like in 'A Mystery Called Love,' the little things make life magical. Let's make today unforgettable!",
   },
   {
-  image: memory3,
-  title: "My Robin to my Steve",
+  image: memory4,
+  title: "the Robin to my Steve",
   text: "Couldn’t ask for a better partner in crime. From silly adventures to random chaos, you’ve always got my back!",
   },
   {
