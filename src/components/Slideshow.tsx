@@ -11,7 +11,7 @@ interface SlideshowProps {
 const slides = [
   {
     image: memory1,
-    title: "The Friendship",
+    title: "u",
     text: "Through thick and thin, you've always been there. That means everything.",
   },
   {
