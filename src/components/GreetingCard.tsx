@@ -43,20 +43,24 @@ const GreetingCard = ({ onCelebrate }: GreetingCardProps) => {
               <h1 className="font-display text-4xl md:text-5xl text-gradient mb-4">Happy 17th!</h1>
               
               <div className="max-w-md mx-auto space-y-3 text-foreground/75 font-body leading-relaxed">
-                <p>Yo,</p>
+  <p>Yo,</p>
+  <p>
+    17 already. You’re growing into someone truly awesome, and I’m glad I get to see it happen.
+  </p>
+  <p>
+    No matter what’s going on, you always keep it real. I really appreciate that about you.
+  </p>
+  <p>
+    Here’s to another year of good times, laughs, and everything you deserve.
+  </p>
                 <p>
-                  17 is a big deal. You're growing into someone incredible and I'm glad I get to witness it.
-                </p>
-                <p>
-                  Through everything, you've always kept it real. That's rare and I appreciate you for it.
-                </p>
-                <p>
-                  Here's to another year of wins, growth, and good times. You deserve all of it.
-                </p>
-                <p className="font-display text-xl text-gradient pt-3">
-                  Happy Birthday!
-                </p>
-              </div>
+    I'm prolly so gased rn cos ive been working on this all day, goodnight and
+  </p>
+                <p>ENJOYYODAYTODAMAXXXXX</p>
+  <p className="font-display text-xl text-gradient pt-3">
+    Happy Birthday!
+  </p>
+</div>
 
               <div className="mt-6 pt-4 border-t border-border">
                 <p className="text-muted-foreground text-sm mb-3 font-body">Made this for you:</p>
@@ -80,7 +84,7 @@ const GreetingCard = ({ onCelebrate }: GreetingCardProps) => {
             {candleBlown && (
               <div className="text-center animate-fade-in-up py-4">
                 <p className="font-display text-2xl text-gradient mb-2">Hope it comes true!</p>
-                <p className="text-muted-foreground text-sm font-body">- Your Best Friend</p>
+                <p className="text-muted-foreground text-sm font-body">- Your Fairy Godmother</p>
               </div>
             )}
           </div>
